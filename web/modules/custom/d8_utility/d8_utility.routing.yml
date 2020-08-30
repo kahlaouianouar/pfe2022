@@ -1,0 +1,8 @@
+d8_utility.remplir_questionnaire:
+  path: '/sondage-de-satisfaction-des-etudiants-universitaires/{id}'
+  defaults:
+    _form: '\Drupal\d8_utility\Form\RemplirQuestionnaire'
+    _title: 'Sondage de satisfaction des étudiants universitaires'
+  requirements:
+    _permission: 'Remplir Questionnaire'
+    _role: 'administrator + etudiant'

@@ -1,0 +1,21 @@
+# Meta information about the module
+
+name: Drupal 8 Utility
+description: Useful features for development with Drupal 8
+type: module
+package: Custom
+core: 8.x
+
+# dependencies: ( A list of other modules your module depends on. )
+#  - {project}:{module}
+
+# test_dependencies: ( A list of other modules in the process of being added as dependencies of your module. )
+#  - {project}:{module}
+
+# configure: hello_world.settings ( If your module offers a configuration form, then you can specify the route to this form here. )
+
+# hidden: true ( This will hide your module from the module list. )
+
+# Note: do not add the 'version'  property yourself!
+# It will be added automatically by the packager on drupal.org.
+version: 0.1

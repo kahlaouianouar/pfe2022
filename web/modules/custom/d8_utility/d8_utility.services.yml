@@ -1,0 +1,6 @@
+services:
+    d8_utility.twig.extension:
+      class: Drupal\d8_utility\TwigExtension\UtilityTwigExtension
+      arguments: ['@renderer', '@url_generator', '@theme.manager', '@date.formatter']
+      tags:
+        - { name: twig.extension }

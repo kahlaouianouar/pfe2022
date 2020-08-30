@@ -1,0 +1,9 @@
+carte-points:
+  version: VERSION
+  js:
+    js/markerclusterer.js: {}
+    js/carte-points.js: {}
+  dependencies:
+    - core/jquery
+    - core/domready
+    - core/drupalSettings
