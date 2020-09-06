@@ -14,3 +14,45 @@ function d8_utility_theme() {
         ),
     ];
 }
+/**
+ * Implements template_preprocess_views_view_field().
+ */
+function d8_utility_preprocess_views_view_field(&$variables)
+{
+  $view = $variables['view'];
+  $field = $variables['field'];
+
+  if ($view->current_display == 'liste_statistique') {
+    $entity = $variables["row"]->_entity;
+    switch($field->field)
+    {
+      case 'nothing':
+        /*$nom = (isset($entity->get('field_nom')->value)) ? substr($entity->get('field_nom')->value, 0, 40) : '';
+        $options = ['absolute' => TRUE];
+        $txt = $nom.' '.substr($entity->getTitle(), 0, 40);
+        $view_link = Link::fromTextAndUrl($txt, $entity->toUrl('canonical', $options));
+        $variables['output'] = $view_link;*/
+        $variables['output'] = 'test';
+        break;
+    }
+  }
+  if ($view->current_display == 'liste_sandages_pour_etudiant') {
+    $entity = $variables["row"]->_entity;
+    /*echo '<pre>';
+var_dump($entity->id());
+
+
+die;*/
+    switch($field->field)
+    {
+      case 'operations':
+        $result =  array(
+          '#markup' => '<a href="/sondage-de-satisfaction-des-etudiants-universitaires/'.$entity->id().'" target="_blank">Remplir le questionnaire</a>',
+        );
+        $renderer = \Drupal::service('renderer');
+        $html = $renderer->render($result);
+        $variables['output'] = $html;
+        break;
+    }
+  }
+}

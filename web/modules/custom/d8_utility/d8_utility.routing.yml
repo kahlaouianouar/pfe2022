@@ -4,5 +4,13 @@ d8_utility.remplir_questionnaire:
     _form: '\Drupal\d8_utility\Form\RemplirQuestionnaire'
     _title: 'Sondage de satisfaction des étudiants universitaires'
   requirements:
+    _role: 'administrator + etudiant'
+
+d8_utility.statistique:
+  path: '/statistique/{id_formation}/{annee}'
+  defaults:
+    _controller: '\Drupal\d8_utility\Controller\StatistiqueController::callback'
+    _title: 'statistique'
+  requirements:
     _permission: 'Remplir Questionnaire'
     _role: 'administrator + etudiant'
