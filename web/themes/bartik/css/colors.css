@@ -17,11 +17,6 @@ body {
   border-bottom-color: #fff;
   background-color: #fff;
 }
-#header {
-  background-color: #1d84c3;
-  background-image: -webkit-linear-gradient(top, #055a8e 0%, #1d84c3 100%);
-  background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
-}
 a,
 .link {
   color: #0071b3;
@@ -43,17 +38,7 @@ a:active,
 .site-footer {
   background: #292929;
 }
-.region-header,
-.region-header a,
-.region-header li a.is-active,
-.region-header .site-branding__text,
-.region-header .site-branding,
-.region-header .site-branding__text a,
-.region-header .site-branding a,
-.region-secondary-menu .menu-item a,
-.region-secondary-menu .menu-item a.is-active {
-  color: #fffeff;
-}
+
 
 /* ---------- Color Form ----------- */
 
@@ -67,4 +52,67 @@ a:active,
 [dir="rtl"] .color-form .color-palette .lock {
   right: -20px;
   left: 0;
+}
+header{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header .site-branding{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .section{
+  display: flex;
+  align-items: center;
+}
+.region-secondary-menu{
+  position: absolute;
+  right:0;
+}
+.region-primary-menu .block-menu .menu li a{
+  position: relative;
+}
+.region-primary-menu .block-menu .menu li a.is-active{
+color:#385dc4;
+position: relative;
+}
+.region-primary-menu .block-menu .menu li a.is-active:after{
+  content:"";
+  position:absolute;
+  background-color:#385dc4;
+  width: 100%;
+  height: 3px;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.region-secondary-menu .menu a{
+  display: inline-block;
+    padding: 0.8em;
+    background: #385dc4;
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.site-branding__text{
+  display: none;
+}
+header .site-branding img{
+  height: 65px;
+}
+.site-branding__name{
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  display: none;
+}
+.site-branding__name a{
+  text-transform: uppercase;
+  color: #002aa1;
+  font-size: 20px;
+  font-weight: bold;
 }

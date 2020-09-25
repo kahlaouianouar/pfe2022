@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&display=swap');
+body,a,p,li{
+  font-family: 'Barlow' !important;
+}
+header{opacity:1;}
+.slider-home{
+  position:relative;
+}
+.slider-home .slick-dots{
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 98%;
+}
+li{
+  list-style: none;
+}
+.slider-home .slick-arrow{
+  display: none !important;
+}
+.slider-home .content{
+  position: absolute;
+  top:50%;
+  transform:translateY(-50%);
+  left:30px;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+}
+.slider-home .content .title{
+  color: white;
+  font-size: 46px;
+  font-weight:600;
+  text-transform: uppercase;
+  margin-top:0;
+  margin-bottom:0;
+  max-width: 700px;
+  line-height: 1.3;
+
+}
+.slider-home .slick-dots li{
+  margin:0 4px;
+}
+.slider-home .slick-dots li.slick-active button{
+  width: 20px;
+}
+.slider-home .slick-dots li button{
+  background-color: white;
+    font-size: 0;
+    border: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    display: block;
+    padding: 0;
+    box-shadow: none;
+    outline:none;
+}
+.slider-home .slick-dots li button:focus{
+  box-shadow: none;
+  outline:none;
+}
+input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-file, input.form-number, input.form-color, textarea.form-textarea{
+  height: 40px;
+  border-radius: 36px;
+  padding-left: 25px;
+}
+.user-login-form{
+  max-width: 400px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  padding: 22px 48px;
+}
+.profile{
+  display: flex;
+  flex-flow: wrap;
+}
+.profile > div{
+  width: 33.3%;
+}
+.user-login-form{
+  background: #0064ac;
+  color: white;
+  border-radius: 15px;
+}
+.user-login-form .form-actions .form-submit{
+  background: #ffffff;
+  color: #454545;
+}
+.user-login-form .form-item{
+  margin-bottom: 40px;
+}
+.form-item label, .form-wrapper .label{
+ font-size: 14px !important;
+font-weight: normal;
+margin-bottom: 12px;
+padding-left: 10px; 
+font-weight: 600;
+}
+.form-actions {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.form-actions .form-submit{
+  margin-right: 0.6em;
+    background: #0141a1cc;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 44px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.remplirquestionnaire-settings{
+  padding: 30px;
+  margin-top: 20px;
+}
+.remplirquestionnaire-settings > fieldset{
+  border-color: #0059c8;
+  background: #ededed;
+  border-radius: 22px;
+  margin-bottom: 30px;
+}
+.remplirquestionnaire-settings > fieldset > legend {
+  background: #0059c8;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin-left: -27px;
+}
+.remplirquestionnaire-settings > fieldset > legend h2{margin-top:0;}
+.remplirquestionnaire-settings > fieldset .fieldset-wrapper > p{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+.remplirquestionnaire-settings > fieldset .fieldset-wrapper fieldset legend{display: none;}
+.remplirquestionnaire-settings > fieldset .fieldset-wrapper fieldset .form-radios{display: flex;justify-content: center;}
+.remplirquestionnaire-settings > fieldset .fieldset-wrapper fieldset .form-radios label{padding-left:0;font-size: 18px !important;}
+.remplirquestionnaire-settings > fieldset .fieldset-wrapper fieldset .form-radios .form-type-radio{padding:0 10px;}
+table tr th{
+  background: #385dc4;
+}
+tr td, tr th {
+  padding: 12px 9px;
+}
+.dashboard .top-dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+  padding: 15px;
+}
+.tabs ul.primary{
+  display: flex;
+  justify-content: center;
+}
+.tabs ul.primary li.is-active a {
+  border-bottom-color: #385dc4;
+  background-color: #385dc4;
+  color: white;
+}
+.tabs ul.primary li a{
+  padding: 5px 20px 10px;
+}
+.slick-slide img{
+  width: 100%;
+}
+.large-layout{
+  max-width: 100% !important;
+}
+.large-layout .layout-main{
+  margin-top:0;
+  margin-bottom:0;
+}
+.large-layout .section{
+  padding:0;
+}
+.col-md-5 {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+  padding:0 15px;
+}
+.col-md-7 {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+  padding:0 15px;
+}
+.col-md-6{
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding:0 15px;
+}
+.dashboard .liste-content {
+  border: 1px solid #aeaeae;
+  background: white;
+  border-radius: 8px;
+}
+.dashboard .liste-content ul li {
+  padding: 30px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.dashboard .liste-content ul li:before {
+  content: "";
+  width: 92%;
+  background: #aeaeae;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.dashboard .liste-content ul li .name {
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.dashboard .liste-content ul li .content {
+  font-size: 12px;
+}
+.dashboard .liste-content ul li .nombre {
+  font-weight: 800;
+  color: #ea6f45;
+  font-size: 25px;
+}
+.dashboard .top-dashboard .col-md-7:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+.dashboard .graph-enquete {
+  padding: 0;
+  position: relative;
+  background: white;
+  border: 1px solid gray;
+  padding: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+.dashboard .top-graph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.dashboard .top-graph .title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.dashboard .graph-participation {
+  border: 1px solid gray;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+}

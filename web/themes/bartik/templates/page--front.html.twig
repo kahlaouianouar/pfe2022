@@ -73,13 +73,22 @@
         </aside>
       </div>
     {% endif %}
-    <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+    <div id="main-wrapper" class="layout-main-wrapper large-layout layout-container clearfix">
       <div id="main" class="layout-main clearfix">
         {{ page.breadcrumb }}
         <main id="content" class="column main-content" role="main">
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
-            Iliass intégrer html page accueil ( images ..... )
+            <div class="slider-home">
+              <div class="fade">
+                <li><img src="themes/bartik/images/banner1.png" />
+                  <div class="content"><h3 class="title">Statistique de staisfaction des étudiants</h3></div>
+                </li>
+                <li><img src="themes/bartik/images/banner2.png" />
+                <div class="content"><h3 class="title">Statistique de staisfaction des étudiants</h3></div>
+                </li>
+              </div>
+            </div>
           </section>
         </main>
         {% if page.sidebar_first %}
