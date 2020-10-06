@@ -5,6 +5,9 @@ namespace Drupal\d8_utility\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * annuaire annonces config settings.
@@ -53,6 +56,10 @@ Merci de consacrer quelques minutes à remplir ce court questionnaire. Les résu
               '#type' => 'markup',
               '#markup' => '<p>'.$question["value"].'</p>',
             );
+            $form['question_'.$i] = array(
+              '#type' => 'hidden',
+              '#value' => $question["value"]
+            );
             $form['position_'.$i]['reponse_'.$i] = array(
               '#type' => 'radios',
               '#title' => 'Réponse*',
@@ -78,7 +85,54 @@ Merci de consacrer quelques minutes à remplir ce court questionnaire. Les résu
     /**
      * {@inheritdoc}
      */
-    public function submitForm(array &$form, FormStateInterface $form_state) {die(ok);
-        parent::submitForm($form, $form_state);
+    public function submitForm(array &$form, FormStateInterface $form_state) {
+      $uid = \Drupal::currentUser()->id();
+      $questions = $form_state->getValue('date');
+      $request = \Drupal::request();
+      $current_path = $request->getPathInfo();
+      $path_args = explode('/', $current_path);
+      $idQuestionnaire = $path_args[2];
+      $quesionnaire = Node::load($idQuestionnaire);
+      $nbrQ = $quesionnaire->field_questions->getValue();
+      $nbrQ = count($nbrQ);
+      
+            $content=array();
+            $content['type']            = 'reponses';      
+            $content['title']           = "Réponses pour le questionnaire ".$quesionnaire->getTitle();
+            $content['created']         = REQUEST_TIME;
+            $content['changed']         = REQUEST_TIME;
+            $content['uid']         = $uid;
+            $content['field_sondage']   = $idQuestionnaire;
+
+            for ($i = 1; $i <= $nbrQ; $i++) {
+              $paragraph = Paragraph::create([
+                'type' => 'question',   // paragraph type machine name
+                'field_saisir_la_question' => [   // paragraph's field machine name
+                    'value' => $_POST['question_'.$i],                  // body field value
+                    'format' => 'full_html',         // body text format
+                ],
+                'field_reponse' => $_POST['reponse_'.$i]
+              ]);
+
+              $paragraph->save();
+
+              $content['field_pg_questions'][$i] = array(
+                'target_id' => $paragraph->id(),
+                'target_revision_id' => $paragraph->getRevisionId()
+                );
+            } 
+            $this->createChaine($content);
+      
+      // set relative internal path
+      $dest_url = "/liste-sandages?msg=success";
+      $response = new RedirectResponse($dest_url);
+      $response->send();
+      return;
+
+    }
+    public function createChaine($content){
+        $node = Node::create($content);
+        $node->save();
+        return $node->id();
     }
 }

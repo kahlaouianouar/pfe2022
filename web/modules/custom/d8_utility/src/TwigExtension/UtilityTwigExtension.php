@@ -43,6 +43,7 @@ class UtilityTwigExtension extends TwigExtension
     public function getFunctions()
     {
         return array(
+            new \Twig_SimpleFunction("display_msg", array($this, "display_msg")),
             new \Twig_SimpleFunction("is_front", array($this, "is_front")),
             new \Twig_SimpleFunction("linkExterne", array($this, "linkExterne")),
             new \Twig_SimpleFunction("_pre", array($this, "_pre")),
@@ -122,6 +123,11 @@ class UtilityTwigExtension extends TwigExtension
     public function is_front(){
         $is_front = \Drupal::service('path.matcher')->isFrontPage();
         return $is_front;
+    }
+    public function display_msg(){
+        if (isset($_GET['msg'])){
+            print '<div data-drupal-messages=""><div role="contentinfo" class="messages messages--status">Nous avons bien enregistré vos réponses.</div></div>';
+        }
     }
     public function linkExterne($url){
         $pos = strpos($url, 'http');
@@ -387,4 +393,5 @@ class UtilityTwigExtension extends TwigExtension
         }
         return false;
     }
+
 }
