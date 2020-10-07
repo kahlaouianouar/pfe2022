@@ -278,3 +278,19 @@ tr td, tr th {
   background: white;
   border-radius: 10px;
 }
+.valide{
+  font-size: 0;
+  background: url(../images/check.svg);
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  display: inline-block;
+}
+.non-valide{
+  font-size: 0;
+  background: url(../images/close.svg);
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  display: inline-block;
+}
