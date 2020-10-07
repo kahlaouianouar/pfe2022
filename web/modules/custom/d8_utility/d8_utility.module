@@ -46,8 +46,9 @@ function d8_utility_preprocess_views_view_field(&$variables)
       $html = $renderer->render($result);
       $variables['output'] = $html;
     }elseif ($field->field == 'nothing'){
+        $class = get_status($entity->id());
       $result =  array(
-        '#markup' => '<span class="valide">valide</span><span class="non-valide">non valide</span>',
+        '#markup' => '<span class="'.$class.'">img</span>',
       );
       $renderer = \Drupal::service('renderer');
       $html = $renderer->render($result);
@@ -55,3 +56,18 @@ function d8_utility_preprocess_views_view_field(&$variables)
     }
   }
 }
+function get_status($id)
+    {
+        $uid = \Drupal::currentUser()->id();
+    
+        $query = \Drupal::entityQuery('node');
+        $query->condition('status', 1);
+        $query->condition('type', 'reponses');
+        $query->condition('uid', $uid);
+        $query->condition('field_sondage', $id);
+        $entity_ids = $query->execute();
+        if ($entity_ids) {
+            return "valide";
+        }
+        return "non-valide";
+    }
